@@ -5,14 +5,19 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.asesoftware.semilla.reserva.dto.TurnoDTO;
 import com.asesoftware.semilla.reserva.entity.TurnoEntity;
+import com.asesoftware.semilla.reserva.mapper.ITurnoMapper;
 import com.asesoftware.semilla.reserva.repository.ITurnoRepository;
 @Service
 public class TurnoService implements ITurnoService {
 	@Autowired
 	private ITurnoRepository turnoRepository;
 
-	
+	@Autowired
+	public ITurnoMapper mapperTurno;
+	/*
 	@Override
 	
 	public List<TurnoEntity> getAll() {
@@ -69,6 +74,27 @@ public class TurnoService implements ITurnoService {
 		turnoRepository.deleteById(id);
 		
 	}
+
+	@Override
+	public TurnoDTO buscarPorId(Integer id) {
+		Optional<TurnoEntity> turnoEntity = turnoRepository.findById(id);
+		return mapperTurno.entityToDto(turnoEntity.get());
+	}
+	*/
+	@Override
+	public List<TurnoDTO> getTurnoByComercios(Integer id) {
+	
+		return mapperTurno.listEntityToDto(turnoRepository.getTurnoByComercio(id));
+		
+	}
+
+	@Override
+	public List<TurnoDTO> getTurnoByServicios(Integer id) {
+
+		return mapperTurno.listEntityToDto(turnoRepository.getTurnoByServicio(id));
+	}
+	
+	
 
 	
 	
