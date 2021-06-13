@@ -4,11 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import lombok.Data;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
-import java.sql.Time;
+import java.util.Date;
 import java.util.List;
 @Data
 @Entity
@@ -23,17 +25,20 @@ public class ServicioEntity {
 	@Column(name= "nom_servicios")
 	private String nombre_servicio;
 	
+	@Temporal(TemporalType.TIME)
 	@Column(name = "hora_apertura")
-	private Time fecha_ini;
+	private Date fecha_ini;
 	
+	@Temporal(TemporalType.TIME)
 	@Column(name = "hora_cierre")
-	private Time fecha_fin;
+	private Date fecha_fin;
+	
 	
 	@Column(name = "duracion")
 	private Integer duracion;
 	
-	@Column(name = "comercio_solicitante")
-	private Integer comercioSolicitante;
+	@Column(name = "id_comercio")
+	private Integer idComercio;
 	
 	@OneToMany(mappedBy="id_servicios")
 	private List<TurnoEntity> turnos;

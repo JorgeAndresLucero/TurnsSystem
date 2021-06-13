@@ -17,7 +17,7 @@ public interface ITurnoRepository extends JpaRepository<TurnoEntity, Integer> {
 	*/
 	@Query(value = "SELECT t.id_turno, t.id_servicios, t.fecha_turno, t.hora_inicio, t.hora_fin, t.estado "
 			+ "FROM Turnos t, Servicios s, Comercios c "
-			+ "WHERE t.id_servicios = s.id_servicios and s.comercio_solicitante = c.id_comercio and c.id_comercio = ?", nativeQuery = true)
+			+ "WHERE t.id_servicios = s.id_servicios and s.id_comercio = c.id_comercio and c.id_comercio = ?", nativeQuery = true)
 	List<TurnoEntity> getTurnoByComercio(@Param("id_comercio") Integer id3);
 	
 	@Query(value = "SELECT t.id_turno, t.id_servicios, t.fecha_turno, t.hora_inicio, t.hora_fin, t.estado "

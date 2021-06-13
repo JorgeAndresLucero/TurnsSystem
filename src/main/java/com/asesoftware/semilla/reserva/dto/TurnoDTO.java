@@ -8,10 +8,10 @@ import lombok.Data;
 public class TurnoDTO {
 	
 	
-	private Integer idTurno;
+	private Integer id;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
-	private Date fechaTurno;
+	private Date fecha;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss", timezone = "America/New_York")
 	private Date horaInicio;

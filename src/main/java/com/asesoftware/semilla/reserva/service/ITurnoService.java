@@ -3,7 +3,6 @@ package com.asesoftware.semilla.reserva.service;
 import java.util.List;
 
 import com.asesoftware.semilla.reserva.dto.TurnoDTO;
-import com.asesoftware.semilla.reserva.entity.TurnoEntity;
 
 public interface ITurnoService {
 	/*

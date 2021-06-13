@@ -29,11 +29,11 @@ public class TurnoEntity {
 	
 	@Column(name="hora_inicio")
 	@Temporal(TemporalType.TIME)
-	private Date hora_inicio;
+	private Date horaInicio;
 	
 	@Column(name="hora_fin")
 	@Temporal(TemporalType.TIME)
-	private Date hora_fin;
+	private Date horaFin;
 	
 	@Column(name="estado")
 	private String estado;

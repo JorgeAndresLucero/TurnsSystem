@@ -1,13 +1,13 @@
 package com.asesoftware.semilla.reserva.service;
 
 import java.util.List;
-import java.util.Optional;
+//import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.asesoftware.semilla.reserva.dto.TurnoDTO;
-import com.asesoftware.semilla.reserva.entity.TurnoEntity;
+//import com.asesoftware.semilla.reserva.entity.TurnoEntity;
 import com.asesoftware.semilla.reserva.mapper.ITurnoMapper;
 import com.asesoftware.semilla.reserva.repository.ITurnoRepository;
 @Service

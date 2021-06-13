@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.asesoftware.semilla.reserva.dto.ResponseDTO;
+import com.asesoftware.semilla.reserva.dto.ServicioDTO;
 import com.asesoftware.semilla.reserva.entity.ServicioEntity;
 import com.asesoftware.semilla.reserva.service.IServicioService;
 
@@ -20,39 +23,31 @@ public class ServicioController {
 	
 	@GetMapping(path = "/all")
 	//listar todos
-	public List<ServicioEntity> getAll(){
+	public ResponseDTO getAll(){
 		return servicioService.getAll();
 	}
 	// listar uno 
 		@GetMapping(path ="/servicio/{id}")
-		public ServicioEntity getComercioById(@PathVariable Integer id) {
+		public ResponseDTO getServicioById(@PathVariable Integer id) {
 		return servicioService.getOneById(id);
 		}
 		
 	//crear	
 	@PostMapping(path = "/crear", consumes = "application/json", produces = "application/json")
-	public ServicioEntity createComercio (@RequestBody ServicioEntity servicioEntity ){
-		try {
-			return servicioService.createServicio(servicioEntity);
-		} catch (Exception e) {
-			return null;
-		}
+	public ResponseDTO createServicio(@RequestBody ServicioDTO entity ){
+			return servicioService.createServicio(entity);
 		
 	}
 	// editar
 	@PostMapping(path = "/editar", consumes = "application/json", produces = "application/json")
-	public ServicioEntity updateServicio(@RequestBody ServicioEntity servicioEntity){
-		try {
+	public ResponseDTO updateServicio(@RequestBody ServicioDTO servicioEntity){
 			return servicioService.updateServicio(servicioEntity);
-		} catch (Exception e) {
-			return null;
-		}
-		
+
 	}
 	//eliminar
 	@GetMapping(path ="delete/{id}")
-	public void deleteById(@PathVariable Integer id){
-		servicioService.deleteServicioById(id);
+	public ResponseDTO deleteServicioById(@PathVariable Integer id){
+		return servicioService.deleteServicioById(id);
 	}
 
 
