@@ -1,8 +1,7 @@
 package com.asesoftware.semilla.reserva.service;
 
-import java.util.List;
+import com.asesoftware.semilla.reserva.dto.ResponseDTO;
 
-import com.asesoftware.semilla.reserva.dto.TurnoDTO;
 
 public interface ITurnoService {
 	/*
@@ -16,6 +15,6 @@ public interface ITurnoService {
 	public void deleteTurnoById(Integer id);
 	public TurnoDTO buscarPorId(Integer id);
 	*/
-	public List<TurnoDTO> getTurnoByComercios(Integer id);
-	public List<TurnoDTO> getTurnoByServicios(Integer id);
+	public ResponseDTO getTurnoByComercios(Integer id);
+	public ResponseDTO getTurnoByServicios(Integer id);
 }

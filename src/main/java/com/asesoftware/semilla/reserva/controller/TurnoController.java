@@ -1,23 +1,21 @@
 package com.asesoftware.semilla.reserva.controller;
 
-import java.util.List;
 
+
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.asesoftware.semilla.reserva.dto.TurnoDTO;
-import com.asesoftware.semilla.reserva.entity.TurnoEntity;
+import com.asesoftware.semilla.reserva.dto.ResponseDTO;
 import com.asesoftware.semilla.reserva.service.ITurnoService;
 
 @RestController
 @RequestMapping(path = "/api/v1/turno")
 
 public class TurnoController {
+	private static final Logger logger = org.slf4j.LoggerFactory.getLogger(TurnoController.class);
 	@Autowired
 	private ITurnoService turnoService;
 
@@ -90,14 +88,20 @@ public class TurnoController {
 	*/
 	// listar por comercio mapper
 	@GetMapping(path = "/turno/comercios/{id}")
-	public List<TurnoDTO> getTurnoByComercios(@PathVariable Integer id) {
+	public ResponseDTO getTurnoByComercios(@PathVariable Integer id) {
+		logger.info("Ingreso al método getTurnoByComercios ");
+		
+		logger.info("Se listará un turno por el comercio: {}",id);
 		return turnoService.getTurnoByComercios(id);
 
 	}
 
 	// listar por servicio mapper
 	@GetMapping(path = "/turno/servicios/{id}")
-	public List<TurnoDTO> getTurnoByServicios(@PathVariable Integer id) {
+	public ResponseDTO getTurnoByServicios(@PathVariable Integer id) {
+		logger.info("Ingreso al método getTurnoByServicios ");
+		
+		logger.info("Se listará un turno por el servicio: {}",id);
 		return turnoService.getTurnoByServicios(id);
 	}
 }

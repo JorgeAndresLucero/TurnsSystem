@@ -15,13 +15,13 @@ public interface ITurnoRepository extends JpaRepository<TurnoEntity, Integer> {
 			+ "WHERE t.id_servicios = s.id_servicios and s.comercio_solicitante = c.id_comercio and t.id_servicios= ?1 and s.id_servicios = ?2", nativeQuery = true)
 	List<TurnoEntity> getTurnoByComercioAndService(@Param("id_comercio") Integer id1, @Param("id_servicios") Integer id2);
 	*/
-	@Query(value = "SELECT t.id_turno, t.id_servicios, t.fecha_turno, t.hora_inicio, t.hora_fin, t.estado "
-			+ "FROM Turnos t, Servicios s, Comercios c "
-			+ "WHERE t.id_servicios = s.id_servicios and s.id_comercio = c.id_comercio and c.id_comercio = ?", nativeQuery = true)
-	List<TurnoEntity> getTurnoByComercio(@Param("id_comercio") Integer id3);
+	@Query(value = "SELECT t  "
+			+ "FROM TurnoEntity t, ServicioEntity s, ComercioEntity c "
+			+ "WHERE t.id_servicios = s.id and s.idComercio = c.id_comercio and c.id_comercio = ?1")
+	List<TurnoEntity> getTurnoByComercio(@Param("id_comercio") Integer id);
 	
-	@Query(value = "SELECT t.id_turno, t.id_servicios, t.fecha_turno, t.hora_inicio, t.hora_fin, t.estado "
-			+ "FROM Turnos t, Servicios s "
-			+ "WHERE t.id_servicios = s.id_servicios and s.id_servicios = ?", nativeQuery = true)
-	List<TurnoEntity> getTurnoByServicio(@Param("id_servicios") Integer id4);
+	@Query(value = "SELECT t "
+			+ "FROM TurnoEntity t, ServicioEntity s "
+			+ "WHERE t.id_servicios = s.id and s.id = ?1")
+	List<TurnoEntity> getTurnoByServicio(@Param("id_servicios") Integer id);
 }

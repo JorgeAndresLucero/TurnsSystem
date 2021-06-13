@@ -1,17 +1,19 @@
 package com.asesoftware.semilla.reserva.service;
 
 import java.util.List;
-//import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-
+import com.asesoftware.semilla.reserva.dto.ResponseDTO;
 import com.asesoftware.semilla.reserva.dto.TurnoDTO;
-//import com.asesoftware.semilla.reserva.entity.TurnoEntity;
 import com.asesoftware.semilla.reserva.mapper.ITurnoMapper;
 import com.asesoftware.semilla.reserva.repository.ITurnoRepository;
 @Service
 public class TurnoService implements ITurnoService {
+	private static final Logger logger  = LoggerFactory.getLogger(TurnoService.class);
 	@Autowired
 	private ITurnoRepository turnoRepository;
 
@@ -82,16 +84,33 @@ public class TurnoService implements ITurnoService {
 	}
 	*/
 	@Override
-	public List<TurnoDTO> getTurnoByComercios(Integer id) {
+	public ResponseDTO getTurnoByComercios(Integer id) {
+		logger.info("Se ingresó al método getTurnByComercios");
+		try {
+			List<TurnoDTO> listaTurnoDTOs = mapperTurno.listEntityToDto(turnoRepository.getTurnoByComercio(id));
+			logger.info("Se obtuvo el turno por comercio con el id {}",id);
+			return new ResponseDTO(listaTurnoDTOs,true, "ok", HttpStatus.OK);
+		} catch (Exception e) {
+			logger.error("Error: {}",e.getMessage());
+			return new ResponseDTO(null,true, "ok", HttpStatus.OK);
+		}
 	
-		return mapperTurno.listEntityToDto(turnoRepository.getTurnoByComercio(id));
-		
+	
 	}
 
 	@Override
-	public List<TurnoDTO> getTurnoByServicios(Integer id) {
+	public ResponseDTO getTurnoByServicios(Integer id) {
+		logger.info("Se ingresó al método getTurnByServicios");
+		try {
+			List<TurnoDTO> listaTurnoDTOs = mapperTurno.listEntityToDto(turnoRepository.getTurnoByServicio(id));
+			logger.info("Se obtuvo el turno por servicio con el id {}",id);
+			return new ResponseDTO(listaTurnoDTOs,true, "ok", HttpStatus.OK);
+		} catch (Exception e) {
+			logger.error("Error: {}",e.getMessage());
+			return new ResponseDTO(null,true, "ok", HttpStatus.OK);
+		}
 
-		return mapperTurno.listEntityToDto(turnoRepository.getTurnoByServicio(id));
+		
 	}
 	
 	
