@@ -7,7 +7,7 @@ import com.asesoftware.semilla.reserva.dto.ComercioDTO;
 import com.asesoftware.semilla.reserva.entity.ComercioEntity;
 
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {IServicioMapper.class} )
 public interface IComercioMapper {
 	
 	public ComercioDTO entityToDto(ComercioEntity comercioEntity);

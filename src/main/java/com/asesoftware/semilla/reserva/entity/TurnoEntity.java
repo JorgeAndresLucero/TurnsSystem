@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -21,7 +23,6 @@ public class TurnoEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id_turno")
 	private Integer id;
-	
 	
 	@Column(name="fecha_turno")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -38,7 +39,12 @@ public class TurnoEntity {
 	@Column(name="estado")
 	private String estado;
 	
-	@Column(name="id_servicios")
+	@Column(name = "id_servicios")
 	private Integer id_servicios;
-
+		
+	/*
+	@ManyToOne()
+	@JoinColumn(name = "id_servicios")
+	private ServicioEntity servicio;
+*/
 }

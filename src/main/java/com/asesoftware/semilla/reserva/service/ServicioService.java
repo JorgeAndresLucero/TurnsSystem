@@ -26,13 +26,13 @@ public class ServicioService implements IServicioService {
 	
 	@Override
 	public ResponseDTO getAll() {
-		logger.info("Se ingresó al método getAll ");
+		logger.info("Se ingreso al método getAll ");
 		return new ResponseDTO(mapperServicio.listEntitytoDto(servicioRepository.findAll()), true, "ok", HttpStatus.OK);
 	}
 
 	@Override
 	public ResponseDTO getOneById(Integer id) {
-		logger.info("Se ingresó al método getOneById ");
+		logger.info("Se ingreso al metodo getOneById ");
 		Optional<ServicioEntity> optional = servicioRepository.findById(id);
 		if(optional.isPresent()) {
 			logger.info("Se obtuvo el servicio {}",id);
@@ -44,7 +44,7 @@ public class ServicioService implements IServicioService {
 
 	@Override
 	public ResponseDTO createServicio(ServicioDTO servicioDTO) {
-		logger.info("Se ingresó al método createServicio ");
+		logger.info("Se ingreso al método createServicio ");
 		try {
 			ServicioEntity servicioEntity = mapperServicio.dtoToEntity(servicioDTO);
 			servicioRepository.save(servicioEntity);
@@ -59,11 +59,11 @@ public class ServicioService implements IServicioService {
 
 	@Override
 	public ResponseDTO updateServicio(ServicioDTO servicioDTO) {
-		logger.info("Se ingresó al método updateServicio ");
+		logger.info("Se ingreso al método updateServicio ");
 		try {
 			ServicioEntity servicioEntity = mapperServicio.dtoToEntity(servicioDTO);
 			servicioRepository.save(servicioEntity);
-			logger.info("Se actualizó el servicio {}",servicioDTO.getIdServicio());
+			logger.info("Se actualizo el servicio {}",servicioDTO.getIdServicio());
 			return new ResponseDTO(mapperServicio.entityToDto(servicioEntity), true, "ok", HttpStatus.OK);
 	
 		} catch (Exception e) {
@@ -75,10 +75,10 @@ public class ServicioService implements IServicioService {
 
 	@Override
 	public ResponseDTO deleteServicioById(Integer id) {
-		logger.info("Se ingresó al método deleteeServicioById");
+		logger.info("Se ingreso al método deleteeServicioById");
 		try {
 			servicioRepository.deleteById(id);
-			logger.info("Se eliminó el servicio: {}",id);
+			logger.info("Se elimino el servicio: {}",id);
 			return new ResponseDTO(null, true, "ok", HttpStatus.OK);
 		} catch (Exception e) {
 			logger.error("Error: {}",e.getMessage());

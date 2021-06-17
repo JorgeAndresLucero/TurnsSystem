@@ -14,7 +14,18 @@ public interface ITurnoRepository extends JpaRepository<TurnoEntity, Integer> {
 			+ " FROM Comercios c, Servicios s, Turnos t "
 			+ "WHERE t.id_servicios = s.id_servicios and s.comercio_solicitante = c.id_comercio and t.id_servicios= ?1 and s.id_servicios = ?2", nativeQuery = true)
 	List<TurnoEntity> getTurnoByComercioAndService(@Param("id_comercio") Integer id1, @Param("id_servicios") Integer id2);
+	
+	@Query(value = "SELECT t  "
+			+ "FROM TurnoEntity t, ServicioEntity s, ComercioEntity c "
+			+ "WHERE t.servicio = s and s.comercio = c and c.id_comercio = ?1")
+	List<TurnoEntity> getTurnoByComercio(@Param("id_comercio") Integer id);
+	
+	@Query(value = "SELECT t "
+			+ "FROM TurnoEntity t, ServicioEntity s "
+			+ "WHERE t.servicio = s and s.id = ?1")
+	List<TurnoEntity> getTurnoByServicio(@Param("id_servicios") Integer id);
 	*/
+	
 	@Query(value = "SELECT t  "
 			+ "FROM TurnoEntity t, ServicioEntity s, ComercioEntity c "
 			+ "WHERE t.id_servicios = s.id and s.idComercio = c.id_comercio and c.id_comercio = ?1")

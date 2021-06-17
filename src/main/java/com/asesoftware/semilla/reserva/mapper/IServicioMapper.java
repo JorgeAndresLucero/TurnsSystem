@@ -10,7 +10,7 @@ import com.asesoftware.semilla.reserva.dto.ServicioDTO;
 import com.asesoftware.semilla.reserva.entity.ServicioEntity;
 
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses= {ITurnoMapper.class})
 public interface IServicioMapper {
 	@Mappings({@Mapping(source = "id", target = "idServicio")})
 	

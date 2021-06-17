@@ -9,6 +9,8 @@ import javax.persistence.TemporalType;
 
 import lombok.Data;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import java.util.Date;
 import java.util.List;
@@ -40,8 +42,15 @@ public class ServicioEntity {
 	@Column(name = "id_comercio")
 	private Integer idComercio;
 	
+	
 	@OneToMany(mappedBy="id_servicios")
 	private List<TurnoEntity> turnos;
+	
+	/*
+	@ManyToOne()
+	@JoinColumn(name = "id_comercio")
+	private ComercioEntity comercio;
+	*/
 	
 	
 }

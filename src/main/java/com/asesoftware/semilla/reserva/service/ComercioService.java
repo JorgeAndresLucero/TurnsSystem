@@ -36,7 +36,7 @@ public class ComercioService implements IComercioService{
 		Optional<ComercioEntity> optional = comercioRepository.findById(id);
 		if(optional.isPresent()) {
 			logger.info("Se listó el Comercio {}",id);
-			return new ResponseDTO(optional.get(), true, "OK", HttpStatus.OK);
+			return new ResponseDTO(mapperComercio.entityToDto(optional.get()), true, "OK", HttpStatus.OK);
 		}
 		return new ResponseDTO(null, false, "Comercio No Encontrado", HttpStatus.OK);
 
