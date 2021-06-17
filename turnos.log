@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2021-06-17 14:44:54.690  INFO 19356 --- [restartedMain] c.a.semilla.reserva.ReservaApplication   : Starting ReservaApplication using Java 15.0.2 on DESKTOP-H7PLNT1 with PID 19356 (D:\Jorge_Andres\ASW\PLAN_SEMILLA\Back\reserva\reserva\target\classes started by Georgie in D:\Jorge_Andres\ASW\PLAN_SEMILLA\Back\reserva\reserva)
 2021-06-17 14:44:54.692  INFO 19356 --- [restartedMain] c.a.semilla.reserva.ReservaApplication   : No active profile set, falling back to default profiles: default
 2021-06-17 14:44:54.724  INFO 19356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
@@ -342,3 +343,41 @@ Caused by: org.hibernate.QueryException: could not resolve property: servicio of
 2021-06-17 16:43:34.866  INFO 9884 --- [http-nio-9007-exec-9] c.a.s.reserva.service.ServicioService    : Se ingreso al método getAll 
 2021-06-17 16:44:41.886  INFO 9884 --- [RMI TCP Connection(58)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
 2021-06-17 16:44:41.886  INFO 9884 --- [RMI TCP Connection(58)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+=======
+2021-06-17 14:29:44.618  INFO 16508 --- [restartedMain] c.a.semilla.reserva.ReservaApplication   : Starting ReservaApplication using Java 15.0.2 on ASW4529 with PID 16508 (C:\Users\jlucero\Documents\Plan_Semilla\Back\TurnsSystem\target\classes started by jlucero in C:\Users\jlucero\Documents\Plan_Semilla\Back\TurnsSystem)
+2021-06-17 14:29:44.626  INFO 16508 --- [restartedMain] c.a.semilla.reserva.ReservaApplication   : No active profile set, falling back to default profiles: default
+2021-06-17 14:29:44.694  INFO 16508 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-17 14:29:44.695  INFO 16508 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-17 14:29:45.602  INFO 16508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-06-17 14:29:45.690  INFO 16508 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 3 JPA repository interfaces.
+2021-06-17 14:29:46.476  INFO 16508 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9007 (http)
+2021-06-17 14:29:46.491  INFO 16508 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-17 14:29:46.492  INFO 16508 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-06-17 14:29:46.589  INFO 16508 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-17 14:29:46.589  INFO 16508 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1893 ms
+2021-06-17 14:29:46.770  INFO 16508 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-06-17 14:29:47.006  INFO 16508 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-06-17 14:29:47.073  INFO 16508 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-06-17 14:29:47.165  INFO 16508 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2021-06-17 14:29:47.669  INFO 16508 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-06-17 14:29:47.835  INFO 16508 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-06-17 14:29:48.762  INFO 16508 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-06-17 14:29:48.771  INFO 16508 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-06-17 14:29:49.281  WARN 16508 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-17 14:29:49.644  INFO 16508 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-17 14:29:49.696  INFO 16508 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9007 (http) with context path ''
+2021-06-17 14:29:49.706  INFO 16508 --- [restartedMain] c.a.semilla.reserva.ReservaApplication   : Started ReservaApplication in 5.575 seconds (JVM running for 7.105)
+2021-06-17 14:29:49.707  INFO 16508 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-06-17 14:29:49.709  INFO 16508 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-06-17 14:30:05.413  INFO 16508 --- [http-nio-9007-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-17 14:30:05.413  INFO 16508 --- [http-nio-9007-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-17 14:30:05.414  INFO 16508 --- [http-nio-9007-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-06-17 14:30:05.439  INFO 16508 --- [http-nio-9007-exec-1] c.a.s.r.controller.ComercioController    : Ingreso al metodo listar por id 
+2021-06-17 14:30:05.440  INFO 16508 --- [http-nio-9007-exec-1] c.a.s.r.controller.ComercioController    : Comercio a mostrar 3
+2021-06-17 14:30:05.440  INFO 16508 --- [http-nio-9007-exec-1] c.a.s.reserva.service.ComercioService    : Ingresó al método getComercioById
+2021-06-17 14:30:05.492  INFO 16508 --- [http-nio-9007-exec-1] c.a.s.reserva.service.ComercioService    : Se listó el Comercio 3
+2021-06-17 14:32:27.936  INFO 16508 --- [http-nio-9007-exec-5] c.a.s.r.controller.ServicioController    : Ingreso al método getServiceById 
+2021-06-17 14:32:27.936  INFO 16508 --- [http-nio-9007-exec-5] c.a.s.r.controller.ServicioController    : Servicio a mostrar 2
+2021-06-17 14:32:27.936  INFO 16508 --- [http-nio-9007-exec-5] c.a.s.reserva.service.ServicioService    : Se ingresó al método getOneById 
+2021-06-17 14:32:27.940  INFO 16508 --- [http-nio-9007-exec-5] c.a.s.reserva.service.ServicioService    : Se obtuvo el servicio 2
+>>>>>>> 43b5ab90b9caddb930ed2d05d6bc91ffdf421961
