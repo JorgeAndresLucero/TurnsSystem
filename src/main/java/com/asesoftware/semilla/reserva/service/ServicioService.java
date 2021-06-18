@@ -36,7 +36,7 @@ public class ServicioService implements IServicioService {
 		Optional<ServicioEntity> optional = servicioRepository.findById(id);
 		if(optional.isPresent()) {
 			logger.info("Se obtuvo el servicio {}",id);
-			return new ResponseDTO(optional.get(), true, "ok", HttpStatus.OK);
+			return new ResponseDTO(mapperServicio.entityToDto(optional.get()), true, "ok", HttpStatus.OK);
 		}
 		logger.error("No se pudo obtener el servicio {}",id);
 		return new ResponseDTO(null, false, "Servicio No Encontrado", HttpStatus.OK);
